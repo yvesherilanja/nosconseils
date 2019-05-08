@@ -1,0 +1,35 @@
+1-Requis:
+
+-UwAmp 3.1.0 (http://www.uwamp.com/en/?page=download) ou en version supérieur
+
+2-Installation local:
+
+-Telecharger le projet sur le lien github https://github.com/yvesherilanja/nosconseils
+-Extraire le fichier .zip
+
+-Copier le dossier dans le répertoire www\ de votre serveur Uwamp	
+-Importer la base de donnée base.sql dans votre MySql(PhpMyAdmin)
+-Editer le fichier config.php (application\config\config.php):
+
+	code :
+	
+	$config['base_url'] = 'http://localhost:80/blog/';	
+		(port : depend de votre port Uwamp)
+		
+		
+-Editer le fichier database.php (application\config\database.php):
+
+	code : 
+	
+	'hostname' => 'localhost',
+	'username' => root',
+	'password' => 'root',
+	'database' => 'blog',
+	
+(changer root/root avec votre login/mot_de_passe phpMyAdmin)
+
+
+3-Démarrage:
+	
+-Ouvrir http://localhost:80/blog/
+ avec votre navigateur
