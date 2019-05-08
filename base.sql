@@ -1,0 +1,48 @@
+DROP database blog;
+CREATE database blog;
+USE blog;
+
+CREATE TABLE  categorie
+(
+  id INT auto_increment primary key,
+  name varchar(80),
+  description varchar(500)
+);
+INSERT INTO categorie values(1,'Sante','Si vous êtes à la recherche de conseils santé, sachez que vous êtes le meilleur pour trouver ce que vous cherchez véritablement.');
+INSERT INTO categorie values(2,'Voyage','Astuces voyage et conseils pour les voyageurs. Ce qu il faut savoir pour bien voyager, pour un tour du monde...ou un simple voyage!');
+INSERT INTO categorie values(3,'Travail','La plupart d''entre nous ne sommes pas aussi chanceux. Mais nous pouvons tous survivre et progresser dans le bureau sans un environnement de travail amical et positif.');
+
+
+CREATE TABLE article
+(
+  id INT auto_increment primary key,
+  idcategorie INT,
+  name varchar(80),
+  image varchar(80),
+  description1 varchar(500),
+  description2 varchar(500)
+);
+
+INSERT INTO article values(1,1,'Manger equilibre et sainement','1.jpeg','C est le premier conseil que l on peut vous donner. Si vous souhaitez être en bonne santé, surveillez votre alimentation. Le sacro-saint « mangez 5 fruits et légumes par jour » est une règle que vous avez sûrement dû entendre des dizaines et des dizaines de fois, mais il y a une raison pour cela. Ces fruits et légumes ont un rôle protecteur dans la prévention de maladies qui peuvent apparaître à l âge, comme les cancers (voir aussi: Prévenir le cancer, conseils pour un mode de vie sain), les maladies cardiovasculaires, l obésité, le diabète… Ils apportent aussi les vitamines, minéraux et fibres nécessaires pour le bon fonctionnement du corps.','Pour certains médecins et nutritionnistes, il faut même consommer 7 voire 10 fruits et légumes par jour! Il faut donc éviter de manger trop gras, trop sucré ou trop salé. Pour vous aider à mieux vous nourrir, il est possible d aller voir des spécialistes, ou de vous munir de votre smartphone: certaines applications comme Yuka, disponible sur Android ou iPhone, vous permettent de mieux consommer en vous indiquant si un produit que vous pouvez trouver en grande surface est trop salé, sucré, ou bourré d additifs. Simples d utilisation, ces applications vont rendre la chose plus ludique!');
+INSERT INTO article values(2,1,'Pratiquez une activité physique régulièrement','2.jpeg','Là-aussi, c est sûrement quelque chose que vous avez souvent entendu. Mais pratiquer une activité physique régulière est primordial pour votre santé, et ce à tous les âges. Une activité physique permet d entretenir le corps et l esprit, de diminuer la mortalité et de prévenir là-aussi l apparition de certaines maladies comme le cancer, les maladies cardio-vasculaires, le diabète, ou d être en surpoids. Cela permet aussi de lutter contre le stress et de mieux dormir.','Pas besoin d être un grand sportif pour pratiquer une activité physique. Marcher ou prendre son vélo pour aller au travail ou éviter de prendre l ascenseur pour emprunter les marches sont de petites choses du quotidien qui ne peuvent que vous faire du bien. Aller à la piscine ou faire un jogging régulièrement sont aussi des activités bénéfiques et qui ne vous demandent pas trop de temps.');
+INSERT INTO article values(3,1,'Dormez suffisamment ','3.jpeg','Savez-vous que vous passez presque 25 ans de votre vie à dormir? C est dire si le sommeil a une part prépondérante dans notre existence et qu il ne faut pas le négliger. Mais avec le travail, les études, la famille et toutes les autres pressions inhérentes à la vie quotidienne, votre temps de sommeil est fortement impacté. Et cela peut nuire à votre santé. ','Le manque de sommeil peut avoir des conséquences sur votre humeur, votre état mental, votre état physique, peut perturber votre métabolisme voire augmenter le risque de développement de certaines maladies. Autant de raisons qui doivent vous pousser à adapter votre rythme de vie pour bénéficier d assez d heures de sommeil. Selon la National Sleep Foundation américaine, le nombre d heures de sommeil recommandées dépend de votre âgé. Cela va de 14 à 17 heures par jour pour les nouveau-nés à 7 à 8 heures pour les séniors (+ de 65 ans). Un adolescent (14 à 17 ans) aura besoin de 8 à 10 heures de sommeil, un jeune adulte (18 à 25 ans) de 7 à 9h et un adulte (26 à 64 ans) de 7 à 9 heures de sommeil. ll s agit bien sûr d indications et tout dépend ensuite des individus.');
+INSERT INTO article values(4,1,'Prenez du temps pour vous et faites ce que vous aimez','4.jpeg','Là-aussi, c est simple à dire mais parfois difficile à faire. Car dans le tumulte de la vie quotidienne, entre métro-boulot-dodo, il est parfois difficile de prendre du temps pour soi. Pas seulement pour se détendre, comme expliqué ci-dessus',' Mais pour sortir, voir des amis, faire une activité (sports, culture…), rendre visite à sa famille… Autant de moments importants pour votre équilibre personnel.');
+
+INSERT INTO article values(5,2,'Mettez-vous au DIY (Do It Yourself – Faire soi-même)','5.jpeg','Nous ne vous apprenons rien de nouveau, les produits que vous achetez au supermarché ne sont pas donnés. Que ce soit les produits cosmétiques, ménagers ou les objets de décoration. La solution ? Préparez-les et fabriquez-les vous-même !','Il existe de nombreux sites vous permettant de faire vos propres produits vous-même ou même de créer de nombreux objets vous-même avec ce que vous avez déjà. Ne croyez pas que ces produits seront moins efficaces ou qu il vous faut des compétences spéciales. C est en général à la portée de tous et en plus, ce sera souvent meilleur pour votre santé.');
+INSERT INTO article values(6,2,'Achetez en solde ou seconde main','6.jpeg','Pourquoi payer plein pot quand vous pouvez payer la même chose à moitié prix durant les soldes ou en seconde main ? Lorsque vous avez besoin de vêtements, attendez les soldes. Vous paierez surement 50% moins cher que si vous les aviez acheté quelques jours avant. Vous pouvez aussi faire les soldes pour anticiper.','Lorsqu il s agit d un achat de plusieurs centaines d euros, n hésitez pas à faire un tour sur les sites de petites annonces. Vous y trouverez très certainement votre bonheur à des prix imbattables et à qualité comparable.');
+INSERT INTO article values(7,2,'Invitez vos amis chez vous plutôt qu à l extérieur','7.jpeg','Dans le même esprit que la cuisine chez soi, sortir avec ses amis pour un restaurant ou un verre peut vite coûter cher, voir très cher. Surtout si vous avez la descente facile. Inviter ses amis chez soi pour un repas ou un apéritif vous coûtera probablement bien moins cher.','Acheter vos aliments et vos boissons au supermarché vous permettra d économiser considérablement. Si en plus vos amis participent en apportant une bouteille ou un dessert, tout le monde y gagne !');
+INSERT INTO article values(8,2,'Placez de l argent chaque mois','8.jpeg','Vous allez nous dire : c est justement mon objectif et c est la raison pour laquelle je lis cet article !','Oui en effet. Cependant, beaucoup d entre vous ne prennent pas la peine de placer de l argent chaque mois. Même s il s agit seulement de quelques dizaines d euros ou même quelques euros, c est l habitude régulière sur le long terme qui compte. C est ce qui vous fera économiser de grandes sommes sur le long terme.');
+
+INSERT INTO article values(9,3,'Une seule tache à la fois','9.jpeg','Vous souhaitez terminer votre travail rapidement et vous enchaînez plusieurs tâches à la fois… Une réelle erreur !','Vous n êtes ni un robot ni un ordinateur. Prenez le temps de réaliser vos projets étape par étape. Celles-ci seront mieux réaliser et plus rapidement. Votre cerveau n est pas multitâche et vous risquez de tout mal faire. « Faire en même temps deux choses qui réclament une participation intellectuelle active est impossible » explique Romain Bisseret, expert en productivité personnelle.');
+INSERT INTO article values(10,3,'Repartir son travail','10.jpeg','Le vendredi est souvent le jour de la semaine où il devient difficile d être efficace. L après-midi reste souvent propice au coup de mou et à la fatigue','Sachez répartir votre travail selon les heures ou vous êtes le plus productif. Les dossiers les plus lourds peuvent être traités le matin. Evitez de les débuter en fin de semaine où votre motivation risque de ne pas être au beau fixe. Selon le site Expert Market « Le moment le plus productif de la journée, pour la majorité des adultes, est la fin de matinée. »');
+INSERT INTO article values(11,3,'Ne pas se laisser distraire','11.jpeg','Perdre en concentration demeure chose facile, et encore plus avec nos objets connectés autour de nous. Essayez de ne pas vous laisser distraire par vos notifications, appels, et messages qui empêchent de garder un bon rythme de travail.','Plusieurs applications mobiles vous permettent de ne plus être distrait telle que Clearlock ou Freedom qui propose de bloquer, le temps que vous souhaitez, internet ou vos notifications. Autrement, essayez de dire gentiment à votre collègue un peu trop bavard que vous devez vous concentrer sur vos taches.');
+INSERT INTO article values(12,3,'Savoir s arrêter','12.jpeg','Ne voyez pas les pauses comme une perte de temps. Bien au contraire elles vous permettent de prendre du recul et de redémarrer en étant plus productif.','Ne voyez pas les pauses comme une perte de temps. Bien au contraire elles vous permettent de prendre du recul et de redémarrer en étant plus productif.');
+
+CREATE TABLE users
+(
+  id INT auto_increment primary key,
+  pseudo VARCHAR(20),
+  mdp VARCHAR(20)
+);
+
+INSERT INTO users values(1,'root','root');
